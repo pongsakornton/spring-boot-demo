@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface OrdersRepository extends CrudRepository<OrdersEntity,Integer> {
+
     public List<OrdersEntity> findByOrderName(String name);
 
     @Query(value="select * from orders o where substring(order_date,1,4) BETWEEN ?1 and ?2",nativeQuery= true)

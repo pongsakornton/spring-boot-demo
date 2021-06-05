@@ -43,11 +43,12 @@ public class OrdersService {
         }
     }
 
-    public List<OrdersEntity> findAllCustomer(){
+    public List<OrdersEntity> findAllOrder(){
+
         return (List<OrdersEntity>) ordersRepository.findAll();
     }
 
-    public boolean delateById(int id) {
+    public boolean deleteById(int id) {
         try{
             ordersRepository.deleteById(id);
             return true;

@@ -40,12 +40,12 @@ public class OrdersController {
 
     @GetMapping("/")
     public ResponseEntity<?> findAllOrder(){
-        return ResponseEntity.status(HttpStatus.OK).body(ordersService.findAllCustomer());
+        return ResponseEntity.status(HttpStatus.OK).body(ordersService.findAllOrder());
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable int id){
-        boolean deleteStatus = ordersService.delateById(id);
+        boolean deleteStatus = ordersService.deleteById(id);
         if(deleteStatus == true){
             return ResponseEntity.status(HttpStatus.OK).build();
         }else{
